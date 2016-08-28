@@ -4,11 +4,5 @@
 <dict>
 	<key>PackageName</key>
 	<string>XerohoaX</string>
-	
-	<key>IB-MaskIcons</key>
-	<true/>
-	
-	<key>DockMode</key>
-	<real>1</real>
 </dict>
 </plist>

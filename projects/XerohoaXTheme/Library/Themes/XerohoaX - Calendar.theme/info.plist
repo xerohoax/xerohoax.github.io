@@ -30,11 +30,5 @@
 		<key>TextXoffset</key>
 		<real>-10</real>	
 	</dict>
-	
-	<key>IB-MaskIcons</key>
-	<true/>
-	
-	<key>DockMode</key>
-	<real>1</real>
 </dict>
 </plist>
