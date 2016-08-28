@@ -4,18 +4,8 @@
 <dict>
 	<key>PackageName</key>
 	<string>XerohoaX</string>
-	<key>customclockicon</key>
-	<dict>
-		<key>hours</key>
-		<string>#000000</string>
-		<key>minutes</key>
-		<string>#000000</string>
-		<key>seconds</key>
-		<string>#ffe614</string>
-		<key>blackDot</key>
-		<string>#000000</string>
-		<key>redDot</key>
-		<string>#ffffff</string>		
-	</dict>
+	
+	<key>IB-MaskIcons</key>
+	<true/>
 </dict>
 </plist>

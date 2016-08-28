@@ -1,13 +1,13 @@
 Package: com.xerohoax.xerohoaxtheme
-Version: 0.0.3
+Version: 0.0.4
 Architecture: iphoneos-arm
 Maintainer: Rohan R. Tuladhar (XerohoaX) <rohanrt001@yahoo.com>
 Depends: com.anemonetheming.anemone, com.matchstic.infostats2, com.bushe.lockhtml4, me.chewitt.customcover, com.evilgoldfish.lockglyph
-Filename: ./debs/com.xerohoax.xerohoaxtheme_0.0.3_iphoneos-arm.deb
-Size: 13105712
-MD5sum: be1be104f5865bfbaf1cfc5578bbb3ce
-SHA1: eea76656d4f92f3a4dd06402471825d1c1b03917
-SHA256: 490c7ea069791c30f59fbc0d54cfde5b7d99650b854002c8eafa4f2ed2157392
+Filename: ./debs/com.xerohoax.xerohoaxtheme_0.0.4_iphoneos-arm.deb
+Size: 15944016
+MD5sum: de02ca902555bd0a3e160e810d92615d
+SHA1: a3e9da401c7a0afbc88db3c5a28b84eb8ca97a5d
+SHA256: 221c1d79b7f0b44e2684f0e74e31d87b2187e725d99fb43c3c045aa6ab31ec4f
 Section: Themes
 Homepage: https://xerohoax.github.io/
 Description: XerohoaX Theme is a collecton of pieces of many different themes created simply to form one theme for personal use.
