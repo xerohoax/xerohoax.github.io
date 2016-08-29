@@ -4,5 +4,8 @@
 <dict>
 	<key>PackageName</key>
 	<string>XerohoaX</string>
+	
+	<key>IB-MaskIcons</key>
+	<true/>
 </dict>
 </plist>
