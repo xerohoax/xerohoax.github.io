@@ -1,0 +1,31 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, height=device-height, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+    <script src="js/paper-full.min.js"></script>
+</head>
+<body>
+<div id="debug"></div>
+<div class="wrapper">
+    <div id="canvas">
+        <canvas id="world"></canvas>
+    </div>
+</div>
+<script src="options/options.js" type="text/javascript"></script>
+<script src="js/main.js" type="text/paperscript" canvas="world"></script>
+<script type="text/javascript">
+var i;paper.install(window);
+function update(){var e=new XMLHttpRequest;e.open("GET","file:///private/var/mobile/Library/BatteryStats.txt?_="+1e6*Math.random(),!0),e.onload=function(){var t=e.responseText;paper.battery(t)},e.onerror=function(){if (debug){var t=e.responseText;document.getElementById("debug").className="err",document.getElementById("debug").insertAdjacentHTML("beforeend",t+" Could not read Battery.<br/> Make sure you have InfoStats installed in cydia<br/>"),clearInterval(i)}},e.send()}
+window.onload=function(){
+	if(!edit){
+		i = setInterval(update,1e3*infoStatsInterval);
+		update();
+	} else {
+		document.getElementsByTagName('body')[0].className='edit';
+		setInterval(paper.editRun,5e3);
+		paper.editRun();
+	}
+};
+</script>
+</body>
+</html>

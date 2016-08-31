@@ -1,0 +1,293 @@
+<html>
+<head>
+<title>LS Pasties 9 by @tvdmd</title>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<style>
+@font-face {
+	font-family:libel;
+	src: url("libel-suit-rg.ttf");
+}
+
+body
+{
+	margin:0;
+	padding:0;
+	text-shadow:1px 1px 0px rgba(55,55,55,0.2);
+	font-weight:100;
+	color:ffffff;
+	letter-spacing:1;
+
+	font-family: libel;
+
+	background:
+    radial-gradient(rgb(0,0,0) 15%, transparent 16%) 0 0,
+    radial-gradient(rgb(0,0,0) 15%, transparent 16%) 8px 8px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+  background-color: rgb(55,55,55);
+  background-size: 2px 2px;
+}
+
+#tblGlobal
+{
+	position:absolute; left:-2%; width:95%; height:100%; z-index:-90;
+}
+
+#tblMainContainer
+{
+	position:absolute; top:1%; left:5%; width:100%; z-index:-90;
+	text-transform: uppercase;
+	padding: 10;
+}
+
+.tdDayOfWeek
+{
+	text-align: right;
+	padding-top: 0px;
+	font-size: 20px;
+}
+
+.spnDayOfWeek
+{
+	opacity: 0.5;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-size: 14px;
+}
+
+.tdClock
+{
+  font-size: 22px;
+}
+
+#divMonthAndDay
+{
+	font-size: 12px;
+	font-weight: normal;
+	text-align: left;
+}
+
+#spnSeconds
+{
+  position: absolute;
+}
+
+#spnUnderline
+{
+	position: absolute;
+	z-index: -89;
+}
+
+#imgUnderline
+{
+	height: 1px;
+	opacity: 0.8;
+}
+
+#imgSeconds
+{
+  height: 1px;
+  opacity: 1;
+	z-index: -70;
+}
+
+</style>
+<script type="text/javascript" charset="utf-8">
+// boolean variables for options
+// set blnAbbreviateMonth to true if you want it to abbreviate the month
+var blnAbbreviateMonth = false;
+
+// set blnAbbreviateDay to true if you want it to abbreviate the day
+var blnAbbreviateDay = false;
+
+// set blnShowSeconds to true if you want to show the seconds
+var blnShowSeconds = false;
+
+// set blnShowAMPM to true if you want to show the AM/PM
+var blnShowAMPM = true;
+
+// set bln24hours to true if you want to show the time in 24 hours
+var bln24hours = false;
+
+// set blnShowYear to true if you want to show the year
+var blnShowYear = true;
+
+// set the color for the current day
+var strCurrentDayColor = "36a6ed";
+
+// array to list our day names
+var arrWeekday = new Array(7);
+arrWeekday[0]=  "Sunday";
+arrWeekday[1] = "Monday";
+arrWeekday[2] = "Tuesday";
+arrWeekday[3] = "Wednesday";
+arrWeekday[4] = "Thursday";
+arrWeekday[5] = "Friday";
+arrWeekday[6] = "Saturday";
+
+// array for our month names
+var arrMonth = new Array(12);
+arrMonth[0]=  "January";
+arrMonth[1] = "February";
+arrMonth[2] = "March";
+arrMonth[3] = "April";
+arrMonth[4] = "May";
+arrMonth[5] = "June";
+arrMonth[6] = "July";
+arrMonth[7]=  "August";
+arrMonth[8] = "September";
+arrMonth[9] = "October";
+arrMonth[10] = "November";
+arrMonth[11] = "December";
+
+// set opacity for disabled weekdays, from 0 to 1
+var strDisabledWeekdayOpacity = "0.4";
+
+function startOnLoad()
+{
+	setInterval ( "setDateAndTime()", 1000);
+}
+
+function setDateAndTime() {
+  var dtCurrentDate = new Date();
+  var intHours = dtCurrentDate.getHours();
+  var intMinutes = dtCurrentDate.getMinutes();
+  var intSeconds = dtCurrentDate.getSeconds();
+
+  var intMinutesToDisplay = checkTime(intMinutes);
+  var intSecondsToDisplay = checkTime(intSeconds);
+
+	var intHourToDisplay = intHours;
+
+	if (!bln24hours)
+	{
+		if (intHours > 12) { intHourToDisplay = intHours - 12;}
+	  if (intHours == 0) { intHourToDisplay = intHours + 12;}
+	}
+
+  var strTimeToDisplay = checkTime(intHourToDisplay) + ":" + intMinutesToDisplay;
+
+	if (blnShowSeconds)
+	{
+		strTimeToDisplay += ":" + intSecondsToDisplay;
+	}
+
+	if (blnShowAMPM  && !bln24hours)
+	{
+		strTimeToDisplay += (intHours >= 12) ? "PM":"AM";
+	}
+
+	document.getElementById('spnClock').innerHTML = strTimeToDisplay;
+	setMonthAndDay(dtCurrentDate);
+
+	var intLineWidth = document.getElementById('tblMainContainer').getBoundingClientRect().right - document.getElementById('tblMainContainer').getBoundingClientRect().left;
+
+	document.getElementById('imgUnderline').style.width = intLineWidth;
+  document.getElementById('spnUnderline').style.left = document.getElementById('tblMainContainer').getBoundingClientRect().left;
+  document.getElementById('spnUnderline').style.top = document.getElementById('spnClock').getBoundingClientRect().bottom + 2;
+
+	var intSecondsLineWidth = document.getElementById('spnSun').getBoundingClientRect().right - document.getElementById('spnClock').getBoundingClientRect().left;
+	var intSecondsLineIncrement = ((intSecondsLineWidth)/60);
+
+	document.getElementById('spnSeconds').style.left = document.getElementById('spnClock').getBoundingClientRect().left;
+	document.getElementById('spnSeconds').style.top = document.getElementById('spnUnderline').getBoundingClientRect().top;
+  document.getElementById('imgSeconds').style.width = intSeconds * intSecondsLineIncrement;
+
+}
+
+function checkTime(intDigit) {
+    if (intDigit < 10) { intDigit = "0" + intDigit};  // add zero in front of numbers < 10
+    return intDigit;
+}
+
+function setMonthAndDay(dtCurrentDate)
+{
+	// get day of week
+  var intDayOfWeek = dtCurrentDate.getDay();
+  var strDayOfWeek = arrWeekday[intDayOfWeek];
+	strDayOfWeek = (blnAbbreviateDay) ? strDayOfWeek.substring(0,3):strDayOfWeek;
+
+  // get month name
+  var strMonth = arrMonth[dtCurrentDate.getMonth()];
+  strMonth = (blnAbbreviateMonth == true) ? strMonth.substring(0,3):strMonth;
+
+	// get day of month
+  var strDayOfMonth = dtCurrentDate.getDate().toString();
+
+  // get wording for day of month
+  var intLastNumberOfDay = strDayOfMonth.slice(-1);
+
+  var strDayOfMonthAppend = "";
+
+	switch (intLastNumberOfDay) {
+		case 1:
+			strDayOfMonthAppend = "st";
+			break;
+		case 2:
+			strDayOfMonthAppend = "nd";
+			break;
+		case 3:
+			strDayOfMonthAppend = "rd";
+			break;
+		default:
+			strDayOfMonthAppend = "th";
+	}
+
+	strDayOfMonth = strDayOfMonth + strDayOfMonthAppend;
+
+	// get year
+	var intYear = dtCurrentDate.getFullYear();
+	strDayOfMonth += (blnShowYear) ? ", " + intYear:"";
+
+  // show the Month and Day in our div
+  document.getElementById('divMonthAndDay').innerHTML = strMonth + " " + strDayOfMonth;
+
+	// reset our highlighted day of week
+  var arrDayOfWeekElements = new Array(7);
+  arrDayOfWeekElements[0]=  document.getElementById('spnSun');
+  arrDayOfWeekElements[1] = document.getElementById('spnMon');
+  arrDayOfWeekElements[2] = document.getElementById('spnTue');
+  arrDayOfWeekElements[3] = document.getElementById('spnWed');
+  arrDayOfWeekElements[4] = document.getElementById('spnThu');
+  arrDayOfWeekElements[5] = document.getElementById('spnFri');
+  arrDayOfWeekElements[6] = document.getElementById('spnSat');
+
+  for (intIndex = 0; intIndex < arrDayOfWeekElements.length; intIndex++)
+  {
+    arrDayOfWeekElements[intIndex].style.opacity = strDisabledWeekdayOpacity;
+  }
+
+  arrDayOfWeekElements[intDayOfWeek].style.opacity = "1";
+	arrDayOfWeekElements[intDayOfWeek].style.color = strCurrentDayColor;
+}
+</script>
+</head>
+<body onload="startOnLoad()">
+	<table id="tblGlobal">
+		<tr>
+			<td nowrap align="center">
+				<table id="tblMainContainer">
+					<tr>
+						<td nowrap class="tdClock"><span id="spnClock"/></span></td>
+						<td align="center" nowrap class="tdDayOfWeek" id="tdDayOfWeek">
+							<span id="spnMon" class="spnDayOfWeek">Mon</span>
+							<span id="spnTue" class="spnDayOfWeek">Tue</span>
+							<span id="spnWed" class="spnDayOfWeek">Wed</span>
+							<span id="spnThu" class="spnDayOfWeek">Thu</span>
+							<span id="spnFri" class="spnDayOfWeek">Fri</span>
+							<span id="spnSat" class="spnDayOfWeek">Sat</span>
+							<span id="spnSun" class="spnDayOfWeek">Sun</span>
+						</td>
+					</tr>
+					<tr>
+						<td nowrap width="100%" id="divMonthAndDay"  colspan="2" >&nbsp;</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<span id="spnSeconds"><img id="imgSeconds" src="seconds-red.jpg"></span>
+	<span id="spnUnderline"><img id="imgUnderline" src="seconds.jpg"></span>
+</body>
+</html>

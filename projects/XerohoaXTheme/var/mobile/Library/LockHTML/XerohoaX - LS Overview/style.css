@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'FuturaO';
+    src: url('Fonts/Futura Oblique.ttf');
+}
+html{
+	letter-spacing: 20px;
+}
+body{
+	position: relative;
+	text-align: center;
+	font-family: 'FuturaO';
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	color: white;
+}
+#date{
+	position: inherit;
+	top: -25px;
+}
+#x{
+	position: inherit;
+	top: -25px;
+	text-transform: lowercase;
+}
+#battery{
+	position: inherit;
+	top: -25px;
+	letter-spacing: 5px;
+	font-size: 20px;
+}
+#box{
+	position: inherit;
+	border: 1px solid white;
+	font-size: 10px;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+#battery{
+	font-size: 7px;
+}
+#time{
+	font-size: 30px;
+	letter-spacing: 12px;
+}
