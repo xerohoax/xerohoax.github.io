@@ -3,5 +3,5 @@ $(window).load(function() {
 
 	date.init();
 	time.init();
-	weather.init();
+	//weather.init();
 });
