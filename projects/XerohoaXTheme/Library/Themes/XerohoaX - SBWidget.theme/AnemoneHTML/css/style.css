@@ -1,0 +1,73 @@
+@charset "utf-8";
+@font-face {
+	font-family: 'AgencyRegular';
+	src: url(../font/AGENCYR.TTF);
+}
+
+@font-face {
+	font-family: 'AgencyBold';
+	src: url(../font/AGENCYB.TTF);
+}
+
+html, body, div, span {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	font-family: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+	font-size: 100%;
+	color: inherit;
+}
+
+html {
+	font-family: "AgencyBold";
+}
+
+body {
+	display: block;
+	background-color: rgba(0, 0, 0, 0);
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: #FFFFFF;
+}
+
+#statusbarPanel {
+	height: 20px;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#datePanel {
+	height: 25px;
+	background-color: rgba(0, 0, 0, 0.75);
+	text-align: center;
+	color: #FFFFFF;
+}
+
+#timePanel {
+	height: 30px;
+	background-color: rgba(255, 255, 255, 0.75);
+	font-size: 25px;
+	text-align: center;
+	color: #000000;
+}
+
+#weatherPanel {
+	height: 25px;
+	background-color: rgba(0, 0, 0, 0.75);
+	text-align: center;
+	color: #FFFFFF;
+}
+
+#dockPanel {
+	height: 30px;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.shadow {
+	background-color: rgba(0, 0, 0, 0);
+	background-image: url("../image/shadow.png");
+	background-size: 100% auto;
+    background-repeat: no-repeat;
+}
