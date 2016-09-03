@@ -1,7 +1,7 @@
 Package: com.xerohoax.xerohoaxtheme
 Name: XerohoaXTheme
 Depends: com.anemonetheming.anemone, com.matchstic.infostats2, com.bushe.lockhtml4, me.chewitt.customcover, com.evilgoldfish.lockglyph
-Version: 0.1.4
+Version: 0.1.5
 Architecture: iphoneos-arm
 Description: XerohoaX Theme is a collecton of pieces of many different themes created simply to form one theme for personal use.
  Not intended for distribution or monetization.
