@@ -17,7 +17,7 @@ date.handleDate = function() {
 	var year = now.getFullYear();
 
 	if (day !== null && month !== null && date !== null && year !== null)
-		dateValue = day + ',&nbsp;' + month + '&nbsp;' + date + '&nbsp;' + year;
+		dateValue = day + ',&nbsp;' + month + '&nbsp;' + date + ',&nbsp;' + year;
 	if (dateValue !== null)
 		$('#datePanel').html(dateValue);
 	else

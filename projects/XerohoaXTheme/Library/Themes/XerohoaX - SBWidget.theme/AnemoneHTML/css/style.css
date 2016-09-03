@@ -1,12 +1,8 @@
 @charset "utf-8";
-@font-face {
-	font-family: 'AgencyRegular';
-	src: url(../font/AGENCYR.TTF);
-}
 
 @font-face {
-	font-family: 'AgencyBold';
-	src: url(../font/AGENCYB.TTF);
+	font-family: 'LibelRegular';
+	src: url(../font/libel-suit-rg.ttf);
 }
 
 html, body, div, span {
@@ -21,7 +17,7 @@ html, body, div, span {
 }
 
 html {
-	font-family: "AgencyBold";
+	font-family: "LibelRegular";
 }
 
 body {
@@ -31,7 +27,7 @@ body {
 	background-size: 100% auto;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 20px;
+	font-size: 18px;
 	color: #FFFFFF;
 }
 
@@ -41,30 +37,30 @@ body {
 }
 
 #datePanel {
-	margin-top: 450px;
-	height: 25px;
+	margin-top: 435px;
+	line-height: 30px;
 	background-color: rgba(0, 0, 0, 0.75);
 	text-align: center;
 	color: #FFFFFF;
 }
 
 #timePanel {
-	height: 30px;
+	line-height: 50px;
 	background-color: rgba(255, 255, 255, 0.75);
-	font-size: 25px;
+	font-size: 32px;
 	text-align: center;
 	color: #000000;
 }
 
 #weatherPanel {
-	height: 25px;
+	line-height: 30px;
 	background-color: rgba(0, 0, 0, 0.75);
 	text-align: center;
 	color: #FFFFFF;
 }
 
 #dockPanel {
-	margin-top: 5px;
+	margin-top: -10px;
 	height: 60px;
 	background-color: rgba(0, 0, 0, 0.5);
 }

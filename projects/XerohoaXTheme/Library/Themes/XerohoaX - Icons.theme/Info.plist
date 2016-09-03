@@ -4,7 +4,7 @@
 <dict>
 	<key>PackageName</key>
 	<string>XerohoaX</string>
-	
+
 	<key>CalendarIconDateSettings</key>
 	<dict>
 		<key>FontSize</key>
@@ -14,7 +14,7 @@
 		<key>TextYoffset</key>
 		<real>-6</real>
 		<key>TextXoffset</key>
-		<real>-12</real>	
+		<real>-12</real>
 	</dict>
 	<key>CalendarIconDaySettings</key>
 	<dict>
@@ -27,46 +27,13 @@
 		<key>TextYoffset</key>
 		<real>17</real>
 		<key>TextXoffset</key>
-		<real>-10</real>	
+		<real>-10</real>
 	</dict>
-	
+
 	<key>IB-MaskIcons</key>
 	<true/>
-	
+
 	<key>DockMode</key>
 	<real>1</real>
-	
-	<key>CalendarIconDateStyle</key>
-	<string>
-		color: #cd2f2f;
-		font-weight: bold;
-		font-size: 32px;
-		position: absolute;
-		top: 14px;
-		left: 0px;
-	</string>
-	<key>CalendarIconDayStyle</key>
-	<string>
-		color: #cd2f2f;
-		font-size: 9px;
-		position: absolute;
-		top: -1px;
-		left: 0px;
-		text-transform: uppercase;
-	</string>
-	
-	<key>customclockicon</key>
-	<dict>
-		<key>hours</key>
-		<string>#000000</string>
-		<key>minutes</key>
-		<string>#000000</string>
-		<key>seconds</key>
-		<string>#ffe614</string>
-		<key>blackDot</key>
-		<string>#000000</string>
-		<key>redDot</key>
-		<string>#ffffff</string>		
-	</dict>
 </dict>
 </plist>
