@@ -4,7 +4,7 @@
 <dict>
 	<key>PackageName</key>
 	<string>XerohoaX</string>
-
+	
 	<key>CalendarIconDateSettings</key>
 	<dict>
 		<key>FontSize</key>
@@ -29,10 +29,10 @@
 		<key>TextXoffset</key>
 		<real>-10</real>
 	</dict>
-
+	
 	<key>IB-MaskIcons</key>
 	<true/>
-
+	
 	<key>DockMode</key>
 	<real>1</real>
 </dict>
